@@ -1,0 +1,21 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: e-commerce-shopping-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          # 启用服务发现
+          enabled: true
+      routes:
+        - id: user-route
+          uri: lb://e-commerce-shopping-user-service
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - RewritePath=/api/user/(?<segment>/?.*), /user/$\{segment}

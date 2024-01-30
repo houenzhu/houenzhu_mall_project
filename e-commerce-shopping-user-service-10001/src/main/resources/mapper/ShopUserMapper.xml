@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhe.springcloud.shopping.mapper.ShopUserMapper">
+    <cache/>
+    <resultMap id="ShopUserMap" type="com.zhe.springcloud.shopping.entity.ShopUser">
+        <id property="userId" column="user_id"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="password" column="password"/>
+        <result property="avater" column="avater"/>
+    </resultMap>
+    <insert id="register" keyProperty="userId" useGeneratedKeys="true">
+        insert into `shop_user`(`username`, `password`, `email`, `phone`)
+        VALUES (#{username}, MD5(#{password}), #{email}, #{phone})
+    </insert>
+    <select id="login" resultMap="ShopUserMap">
+        select `user_id`, `username`, `password`, `email`, `phone`, `avater` from shop_user
+        <if test="phone != null and phone != ''">
+            <where>
+                `phone` = #{phone} and `password` = MD5(#{password})
+            </where>
+        </if>
+        <if test="username != null and username != ''">
+            <where>
+                `username` = #{username} and `password` = MD5(#{password})
+            </where>
+        </if>
+        <if test="email != null and email != ''">
+            <where>
+                'email' = #{email} and 'password' = MD5(#{password})
+            </where>
+        </if>
+    </select>
+
+
+
+</mapper>

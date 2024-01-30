@@ -1,0 +1,33 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: e-commerce-shopping-user-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    alibaba:
+      seata:
+        tx-service-group: zhe_shopping_tx_group
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: aaa759959801
+    url: jdbc:mysql://localhost:3306/db_shop_micro_service?rewriteBatchedStatements=true&serverTimezone=UTC&useSSL=true&userUnicode=true&characterEncoding=UTF-8&useInformationSchema=false
+  profiles:
+    active: dev
+mybatis-plus:
+  mapperLocations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  level:
+    io:
+      seata: info
