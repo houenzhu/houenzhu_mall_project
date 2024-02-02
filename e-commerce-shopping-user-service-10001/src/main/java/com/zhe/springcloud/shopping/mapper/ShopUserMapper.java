@@ -12,4 +12,5 @@ public interface ShopUserMapper extends BaseMapper<ShopUser> {
     // 登录
     ShopUser login(ShopUser shopUser);
     void register(ShopUser shopUser);
+    void updatePersonInfo(ShopUser shopUser);
 }
