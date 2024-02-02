@@ -40,4 +40,15 @@ public class ShopUserTest {
         shopUserService.register(shopUser);
         System.out.println("shopUser的id = " + shopUser.getUserId());
     }
+
+    @Test
+    public void updatePersonInfo() {
+        ShopUser shopUser = new ShopUser();
+        shopUser.setUsername("user2");
+        shopUser.setPassword("123456");
+        shopUser.setPhone("1884212484");
+        shopUser.setEmail("23664941154@sina.com");
+        shopUser.setUserId(11);
+        shopUserMapper.updatePersonInfo(shopUser);
+    }
 }

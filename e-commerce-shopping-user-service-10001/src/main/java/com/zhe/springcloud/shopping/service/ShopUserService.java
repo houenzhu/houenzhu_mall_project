@@ -11,5 +11,8 @@ import com.zhe.springcloud.shopping.entity.ShopUser;
 public interface ShopUserService extends IService<ShopUser> {
     // 登录
     ShopUser login(ShopUser shopUser);
+    // 注册
     void register(ShopUser shopUser);
+    // 更新个人信息
+    void updatePersonInfo(ShopUser shopUser);
 }

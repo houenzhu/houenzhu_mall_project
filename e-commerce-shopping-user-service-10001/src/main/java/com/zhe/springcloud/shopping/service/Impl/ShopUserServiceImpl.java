@@ -67,4 +67,12 @@ public class ShopUserServiceImpl extends ServiceImpl<ShopUserMapper, ShopUser> i
         }
     }
 
+
+    @Override
+    public void updatePersonInfo(ShopUser shopUser) {
+        log.info("用户{}, id:{}开始更新信息", shopUser.getUsername(), shopUser.getUserId());
+        shopUserMapper.updatePersonInfo(shopUser);
+        log.info("更新成功!");
+    }
+
 }

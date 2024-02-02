@@ -18,7 +18,7 @@ import java.util.Objects;
  */
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/member")
 public class ShopUserController {
 
     @Resource
@@ -46,5 +46,11 @@ public class ShopUserController {
     public Result register(@RequestBody ShopUser shopUser) {
         shopUserService.register(shopUser);
         return Result.success("注册成功!快去选心仪的商品吧!");
+    }
+
+    @PutMapping("/updateInfo")
+    public Result updateInfo(@RequestBody ShopUser shopUser) {
+        shopUserService.updatePersonInfo(shopUser);
+        return Result.success("更新成功!");
     }
 }
