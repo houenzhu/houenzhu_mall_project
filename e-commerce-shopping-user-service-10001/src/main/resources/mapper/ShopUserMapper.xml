@@ -11,10 +11,20 @@
         <result property="password" column="password"/>
         <result property="avater" column="avater"/>
     </resultMap>
+    <!--用户注册-->
     <insert id="register" keyProperty="userId" useGeneratedKeys="true">
         insert into `shop_user`(`username`, `password`, `email`, `phone`)
         VALUES (#{username}, MD5(#{password}), #{email}, #{phone})
     </insert>
+    <!--更新个人信息-->
+    <update id="updatePersonInfo" parameterType="com.zhe.springcloud.shopping.entity.ShopUser">
+        update `shop_user` set `username` = #{username}, `password` = md5(#{password}),
+                               `email` = #{email}, `phone` = #{phone}, `avater` = ''
+        <where>
+            `user_id` = #{userId}
+        </where>
+    </update>
+    <!--用户登录(适配多种方式)-->
     <select id="login" resultMap="ShopUserMap">
         select `user_id`, `username`, `password`, `email`, `phone`, `avater` from shop_user
         <if test="phone != null and phone != ''">
