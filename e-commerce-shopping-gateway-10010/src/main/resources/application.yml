@@ -16,6 +16,6 @@ spring:
         - id: user-route
           uri: lb://e-commerce-shopping-user-service
           predicates:
-            - Path=/api/user/**
+            - Path=/api/member/**
           filters:
-            - RewritePath=/api/user/(?<segment>/?.*), /user/$\{segment}
+            - RewritePath=/api/member/(?<segment>/?.*), /member/$\{segment}
