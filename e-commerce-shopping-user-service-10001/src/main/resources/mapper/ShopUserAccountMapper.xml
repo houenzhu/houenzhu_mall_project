@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zhe.springcloud.shopping.mapper.ShopUserAccountMapper">
-    <resultMap id="accountMap" type="com.zhe.springcloud.shopping.entity.ShopUserAccount">
+    <resultMap id="accountMap" type="com.zhe.springcloud.shopping.entity.member.ShopUserAccount">
         <id column="account_id" property="accountId"/>
         <result column="user_id" property="userId"/>
         <result column="balance" property="balance"/>

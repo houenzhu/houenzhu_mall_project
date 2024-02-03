@@ -4,7 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhe.springcloud.shopping.mapper.ShopUserMapper">
     <cache/>
-    <resultMap id="ShopUserMap" type="com.zhe.springcloud.shopping.entity.ShopUser">
+    <resultMap id="ShopUserMap" type="com.zhe.springcloud.shopping.entity.member.ShopUser">
         <id property="userId" column="user_id"/>
         <result property="phone" column="phone"/>
         <result property="email" column="email"/>
@@ -17,7 +17,7 @@
         VALUES (#{username}, MD5(#{password}), #{email}, #{phone})
     </insert>
     <!--更新个人信息-->
-    <update id="updatePersonInfo" parameterType="com.zhe.springcloud.shopping.entity.ShopUser">
+    <update id="updatePersonInfo" parameterType="com.zhe.springcloud.shopping.entity.member.ShopUser">
         update `shop_user` set `username` = #{username}, `password` = md5(#{password}),
                                `email` = #{email}, `phone` = #{phone}, `avater` = ''
         <where>

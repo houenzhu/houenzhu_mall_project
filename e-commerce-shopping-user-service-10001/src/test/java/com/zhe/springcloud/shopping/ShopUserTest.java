@@ -1,6 +1,6 @@
 package com.zhe.springcloud.shopping;
 
-import com.zhe.springcloud.shopping.entity.ShopUser;
+import com.zhe.springcloud.shopping.entity.member.ShopUser;
 import com.zhe.springcloud.shopping.mapper.ShopUserMapper;
 import com.zhe.springcloud.shopping.service.ShopUserService;
 import org.junit.jupiter.api.Test;

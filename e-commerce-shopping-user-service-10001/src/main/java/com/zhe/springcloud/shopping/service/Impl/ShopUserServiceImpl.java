@@ -1,7 +1,7 @@
 package com.zhe.springcloud.shopping.service.Impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zhe.springcloud.shopping.entity.ShopUser;
+import com.zhe.springcloud.shopping.entity.member.ShopUser;
 import com.zhe.springcloud.shopping.exception.LoginException;
 import com.zhe.springcloud.shopping.exception.RegisterException;
 import com.zhe.springcloud.shopping.mapper.ShopUserAccountMapper;
@@ -12,7 +12,6 @@ import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 

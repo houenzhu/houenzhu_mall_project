@@ -1,16 +1,13 @@
 package com.zhe.springcloud.shopping.controller;
 
 import com.zhe.springcloud.shopping.entity.Result;
-import com.zhe.springcloud.shopping.entity.ShopUser;
+import com.zhe.springcloud.shopping.entity.member.ShopUser;
 import com.zhe.springcloud.shopping.service.ShopUserService;
-import org.apache.commons.lang.StringUtils;
-import org.aspectj.lang.annotation.Before;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * @version 1.0

@@ -1,7 +1,7 @@
 package com.zhe.springcloud.shopping.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zhe.springcloud.shopping.entity.ShopUser;
+import com.zhe.springcloud.shopping.entity.member.ShopUser;
 
 /**
  * @version 1.0

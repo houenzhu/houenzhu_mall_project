@@ -1,7 +1,7 @@
 package com.zhe.springcloud.shopping.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.zhe.springcloud.shopping.entity.ShopUser;
+import com.zhe.springcloud.shopping.entity.member.ShopUser;
 
 /**
  * @version 1.0

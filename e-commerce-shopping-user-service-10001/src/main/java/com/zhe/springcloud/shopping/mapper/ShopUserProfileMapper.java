@@ -1,7 +1,7 @@
 package com.zhe.springcloud.shopping.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.zhe.springcloud.shopping.entity.ShopUserProfile;
+import com.zhe.springcloud.shopping.entity.member.ShopUserProfile;
 import org.apache.ibatis.annotations.Param;
 
 /**
