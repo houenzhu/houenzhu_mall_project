@@ -1,4 +1,4 @@
-package com.zhe.springcloud.shopping.entity;
+package com.zhe.springcloud.shopping.entity.member;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
